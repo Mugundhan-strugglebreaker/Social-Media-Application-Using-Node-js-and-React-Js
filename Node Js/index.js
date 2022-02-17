@@ -9,10 +9,24 @@ const authRoute = require("./routes/auth")
 
 dotenv.config()
 
-mongoose.connect(process.env.MONGO_URL,{ useNewUrlParser : true},()=>{
-    console.log("Connected to monogoDb");
-});
+// mongoose.connect(process.env.MONGO_URL,{ useNewUrlParser : true , useUnifiedTopology:true},()=>{
+//     console.log("Connected to monogoDb");
+// });
 
+// mongoose.connect(
+//     process.env.MONGO_URL,
+//     { useNewUrlParser: true, useUnifiedTopology: true},
+//     () => {
+//       console.log('Connected to MongoDB');
+//     }
+//   );
+
+mongoose
+  .connect(process.env.MONGO_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true})
+  .then(() => console.log("Database connected!"))
+  .catch(err => console.log(err));
 
 //middleware
 app.use(express.json())

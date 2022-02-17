@@ -6,41 +6,41 @@ const UserSchema = new mongoose.Schema({
         require : true,
         min:3,
         max:20,
-        unique:true
+        unique:true,
     },
     email:{
         type : String ,
         require : true,
         unique : true,
-        max : 50
+        max : 50,
     },
     password :{
         type : String,
         require : true,
-        min : 6
+        min : 6,
     },
     profilePicture :{
         type : String,
-        default :""
+        default :"",
     },
     coverPicture :{
         type : String,
-        default :""
+        default :"",
     },
     followers:{
         type : Array,
-        default:[]
+        default:[],
     },
     following:{
         type : Array,
-        default:[]
+        default:[],
     },
     isAdmin :{
         type : Boolean,
-        default : false
+        default : false,
     },
 },
 {timestamps : true}
 )
 
-module.exports = mongoose.model("User", UserSchema)
+module.exports = mongoose.model("User", UserSchema);

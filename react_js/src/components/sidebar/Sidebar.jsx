@@ -43,6 +43,46 @@ function Sidebar() {
               <span className="sidebarListItemText">Courses</span>
             </li>
           </ul>
+          <button className="sidebarButton">Show More</button>
+          <hr className="sidebarHr" />
+          <ul className="sidebarFriendList">
+            <li className="sidebarFriend">
+              <img src="/assests/person/2.jpg" alt="" className="sidebarFriendImg" />
+              <span className="sidebarFriendName">Meiyappan N</span>
+            </li>
+            <li className="sidebarFriend">
+              <img src="/assests/person/3.jpg" alt="" className="sidebarFriendImg" />
+              <span className="sidebarFriendName">Rajesh Kumar A</span>
+            </li>
+            <li className="sidebarFriend">
+              <img src="/assests/person/4.jpg" alt="" className="sidebarFriendImg" />
+              <span className="sidebarFriendName">Mukesh S</span>
+            </li>
+            <li className="sidebarFriend">
+              <img src="/assests/person/5.jpg" alt="" className="sidebarFriendImg" />
+              <span className="sidebarFriendName">Vignesh S</span>
+            </li>
+            <li className="sidebarFriend">
+              <img src="/assests/person/6.jpg" alt="" className="sidebarFriendImg" />
+              <span className="sidebarFriendName">Aravind</span>
+            </li>
+            <li className="sidebarFriend">
+              <img src="/assests/person/7.jpg" alt="" className="sidebarFriendImg" />
+              <span className="sidebarFriendName">Under Taker</span>
+            </li>
+            <li className="sidebarFriend">
+              <img src="/assests/person/8.jpg" alt="" className="sidebarFriendImg" />
+              <span className="sidebarFriendName">Arnold</span>
+            </li>
+            <li className="sidebarFriend">
+              <img src="/assests/person/9.jpg" alt="" className="sidebarFriendImg" />
+              <span className="sidebarFriendName">Steve Doe</span>
+            </li>
+            <li className="sidebarFriend">
+              <img src="/assests/person/10.jpg" alt="" className="sidebarFriendImg" />
+              <span className="sidebarFriendName">Ben 10</span>
+            </li>
+          </ul>
       </div>
     </div>
   )

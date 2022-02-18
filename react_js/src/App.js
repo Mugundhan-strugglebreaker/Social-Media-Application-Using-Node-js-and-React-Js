@@ -1,8 +1,9 @@
+import Home from "./pages/home/Home";
 
 function App() {
   return (
     <div>
-      <h1>Hello Mugundhan</h1>
+      <Home/>
     </div>
   );
 }

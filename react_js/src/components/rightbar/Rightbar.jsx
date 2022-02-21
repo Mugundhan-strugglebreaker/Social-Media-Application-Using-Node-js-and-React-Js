@@ -3,7 +3,7 @@ import {Users} from "../../dummyData";
 import Online from "../online/Online";
 
 function Rightbar({profile}) {
-
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const HomeRightbar = ()=>{
     return(
       <>
@@ -14,7 +14,7 @@ function Rightbar({profile}) {
               <b>Meiyappan</b> and <b>2 other friends</b> have a birthday today
             </span>
           </div>
-          <img src="/assests/ad.png" alt="" className="rightbarAd" />
+          <img src={`${PF}/assests/ad.png`} alt="" className="rightbarAd" />
           <h4 className="rightbarTitle">Online Friends</h4>
           <ul className="rightbarFriendList">
             {
@@ -47,27 +47,27 @@ function Rightbar({profile}) {
         <h4 className="rightbarTitle">User Friends</h4>
         <div className="rightbarFollowings">
            <div className="rightbarFollowing">
-             <img src="assests/person/2.jpg" alt="" className="rightbarFollowingImg" />
+             <img src={`${PF}person/2.jpg`} alt="" className="rightbarFollowingImg" />
              <span className="rightbarFollowingName">Meiyappan N</span>
            </div>
            <div className="rightbarFollowing">
-             <img src="assests/person/3.jpg" alt="" className="rightbarFollowingImg" />
+             <img src={`${PF}person/3.jpg`} alt="" className="rightbarFollowingImg" />
              <span className="rightbarFollowingName">Rajesh Kumar</span>
            </div>
            <div className="rightbarFollowing">
-             <img src="assests/person/4.jpg" alt="" className="rightbarFollowingImg" />
+             <img src={`${PF}person/4.jpg`} alt="" className="rightbarFollowingImg" />
              <span className="rightbarFollowingName">Vignesh</span>
            </div>
            <div className="rightbarFollowing">
-             <img src="assests/person/5.jpg" alt="" className="rightbarFollowingImg" />
+             <img src={`${PF}person/5.jpg`} alt="" className="rightbarFollowingImg" />
              <span className="rightbarFollowingName">Aravind</span>
            </div>
            <div className="rightbarFollowing">
-             <img src="assests/person/6.jpg" alt="" className="rightbarFollowingImg" />
+             <img src={`${PF}person/6.jpg`} alt="" className="rightbarFollowingImg" />
              <span className="rightbarFollowingName">Arnold</span>
            </div>
            <div className="rightbarFollowing">
-             <img src="assests/person/9.jpg" alt="" className="rightbarFollowingImg" />
+             <img src={`${PF}person/9.jpg`} alt="" className="rightbarFollowingImg" />
              <span className="rightbarFollowingName">Ben 10</span>
            </div>
         </div>

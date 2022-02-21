@@ -14,7 +14,7 @@ function Rightbar({profile}) {
               <b>Meiyappan</b> and <b>2 other friends</b> have a birthday today
             </span>
           </div>
-          <img src={`${PF}/assests/ad.png`} alt="" className="rightbarAd" />
+          <img src={`/assests/ad.png`} alt="" className="rightbarAd" />
           <h4 className="rightbarTitle">Online Friends</h4>
           <ul className="rightbarFriendList">
             {

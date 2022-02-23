@@ -26,8 +26,8 @@ function Profile() {
           <div className="profileRight">
                <div className="profileRightTop">
                     <div className="profileCover">
-                        <img src={user.coverPicture || PF+"/coverPic.jpg"} alt="" className="profileCoverImg" />
-                        <img src={user.profilePicture || PF+"/profilePic.png"} alt="" className="profileUserImg" />
+                        <img src={user.coverPicture ? PF+user.coverPicture : PF+"/coverPic.jpg"} alt="" className="profileCoverImg" />
+                        <img src={user.profilePicture ? PF+user.profilePicture : PF+"/profilePic.png"} alt="" className="profileUserImg" />
                     </div>
                     <div className="profileInfo">
                         <h4 className="profileInfoName">{user.username}</h4>

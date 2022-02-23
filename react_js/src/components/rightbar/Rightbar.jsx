@@ -8,13 +8,13 @@ function Rightbar({user}) {
     return(
       <>
         <div className="birthdayContainer">
-            <img src="/assests/gift.png" alt="" className="birthdayImg" />
+            <img src={PF+"gift.png"} alt="" className="birthdayImg" />
             <span className="birthdayText">
               {" "}
               <b>Meiyappan</b> and <b>2 other friends</b> have a birthday today
             </span>
           </div>
-          <img src={`/assests/ad.png`} alt="" className="rightbarAd" />
+          <img src={PF+"ad.png"} alt="" className="rightbarAd" />
           <h4 className="rightbarTitle">Online Friends</h4>
           <ul className="rightbarFriendList">
             {

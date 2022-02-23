@@ -1,6 +1,6 @@
 import "./share.css"
 import  {PermMedia , Label , Room , EmojiEmotions} from "@mui/icons-material"
-import { useContext, useRef } from "react"
+import { useContext, useEffect, useRef } from "react"
 import { AuthContext } from "../../context/AuthContext"
 import { useState } from "react"
 import axios from "axios"
@@ -15,6 +15,22 @@ function Share() {
       const newPost = {
           userId : user._id,
           desc : desc.current.value,
+      }
+      if(file){
+          const data = new FormData();
+          const fileName = Date.now() + file.name
+          data.append("file",file);
+          newPost.img = fileName
+          try{
+            await axios.post("upload",data,{
+                headers:{
+                    name : fileName
+                }
+            });
+            window.location.reload();
+          }catch(err){
+              console.log(err)
+          }
       }
       try{
         await axios.post("posts",newPost)

@@ -22,7 +22,7 @@ function Share() {
           data.append("file",file);
           newPost.img = fileName
           try{
-            await axios.post("upload",data,{
+            await axios.post("/upload",data,{
                 headers:{
                     name : fileName
                 }
@@ -33,7 +33,7 @@ function Share() {
           }
       }
       try{
-        await axios.post("posts",newPost)
+        await axios.post("/posts",newPost)
       }catch(err){
 
       }

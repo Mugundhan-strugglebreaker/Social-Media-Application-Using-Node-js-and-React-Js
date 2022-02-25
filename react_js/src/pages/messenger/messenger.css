@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 }
 .chatBoxTop{
     height: 100%;
@@ -52,4 +53,12 @@
 }
 .chatMenuInput:focus{
     outline: none;
+}
+.noConversationText{
+    position: absolute;
+    top:10%;
+    font-size: 50px;
+    color: rgb(224,220,220);
+    cursor: default;
+
 }

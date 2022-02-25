@@ -33,8 +33,10 @@ function Topbar() {
                     <span className="topbarIconBadge">1</span>
                 </div>
                 <div className="topbarIconItem">
-                    <Chat/>
-                    <span className="topbarIconBadge">2</span>
+                    <Link to="/messenger">
+                        <Chat/>
+                        <span className="topbarIconBadge">2</span>
+                    </Link>
                 </div>
                 <div className="topbarIconItem">
                     <Notifications/>

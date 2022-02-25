@@ -9,6 +9,7 @@ import { useEffect } from "react"
 import { useState } from "react"
 import axios from "axios"
 import { useRef } from "react"
+import {io} from "socket.io-client"
 
 function Messenger() {
   const [conversation,setConversation] = useState([]);
@@ -16,8 +17,20 @@ function Messenger() {
   const [messages , setMessages] = useState([])
   const { user } = useContext(AuthContext);
   const [newMessage , setNewMessage] = useState("");
+  const socket = useRef()
   const scrollRef = useRef();
-  console.log(user)
+
+  useEffect(()=>{
+    socket.current = io("ws://localhost:8900");
+  },[])
+  
+  useEffect(()=>{
+      socket.current.emit("addUser", user._id);
+      socket.current.on("getUsers",users=>{
+          console.log(users);
+      })
+  },[user])
+
   useEffect(()=>{
       const getConversations = async ()=>{
         try{  

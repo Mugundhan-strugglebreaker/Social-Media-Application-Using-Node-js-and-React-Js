@@ -8,12 +8,15 @@ import { AuthContext } from "../../context/AuthContext"
 import { useEffect } from "react"
 import { useState } from "react"
 import axios from "axios"
+import { useRef } from "react"
 
 function Messenger() {
   const [conversation,setConversation] = useState([]);
   const [currentChat , setCurrentChat] = useState(null);
   const [messages , setMessages] = useState([])
   const { user } = useContext(AuthContext);
+  const [newMessage , setNewMessage] = useState("");
+  const scrollRef = useRef();
   console.log(user)
   useEffect(()=>{
       const getConversations = async ()=>{
@@ -38,7 +41,24 @@ function Messenger() {
       }
       getMessages();
   },[currentChat])
-
+  const handleSubmit = async (e)=>{
+      e.preventDefault();
+      const message = {
+          "sender":user._id,
+          "text":newMessage,
+          "conversationId":currentChat._id,
+      }
+      try{
+        const savedMessage = await axios.post("/messages/",message);
+        setMessages([...messages,savedMessage.data])
+        setNewMessage("")
+      }catch(err){
+          console.log(err);
+      }
+  }
+  useEffect(()=>{
+        scrollRef.current?.scrollIntoView({behaviour : "smooth"});
+  },[messages])
   return (
       <>
         <Topbar/>
@@ -64,13 +84,15 @@ function Messenger() {
                                 <div className="chatBoxTop">
                                     {
                                         messages.map(m =>(
-                                            <Message message={m} own={m.sender === user._id}/>
+                                            <div ref={scrollRef}>
+                                                 <Message message={m} own={m.sender === user._id}/>
+                                            </div>
                                         ))
                                     }
                                 </div>
                                 <div className="chatBoxBottom">
-                                    <textarea className="chatMessageInput" placeholder="write something..."></textarea>
-                                    <button className="chatSubmitButton">Send</button>
+                                    <textarea className="chatMessageInput" placeholder="write something..." onChange={(e)=>setNewMessage(e.target.value)} value={newMessage}></textarea>
+                                    <button className="chatSubmitButton" onClick={handleSubmit}>Send</button>
                                 </div>
                             </>
                         ):
